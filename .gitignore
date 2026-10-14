@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+repos/
+demo-repo/
+.backups/
+reports/
+*.graph.json
+**/*backup-*/
+*.before-*.js
+.env
+.env.*
+.test-tmp/

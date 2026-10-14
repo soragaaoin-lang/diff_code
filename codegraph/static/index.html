@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PLISM · Change Review</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><a class="brand" href="/">◈ PLISM</a><span>Change Review</span><span class="local">LOCAL · 個人レビュー</span></header>
+<form id="compare"><label>比較元 <input id="base" aria-label="比較元" placeholder="HEAD~1"></label><span>→</span><label>比較先 <input id="head" aria-label="比較先" placeholder="HEAD"></label><button id="load">比較を開く</button><span id="version"></span></form>
+<div id="message" role="status"></div>
+<details class="purpose"><summary>変更の目的・比較の情報</summary><div id="materials"><p>変更理由の資料はありません。コードから作者の意図を断定しません。</p></div><p id="notesWarning"></p><p id="identity"></p><p>2つの固定コミットを直接比較します。関係解析はPythonが対象です。</p></details>
+<p id="previous" class="hint"></p>
+<nav class="mobile-actions"><button id="toggleFiles">ファイル一覧</button><button id="toggleHelp">補助情報を開閉</button><span id="saved" role="status"></span><button id="clearRecord">この比較の記録を削除</button><button id="undoClear" hidden>削除を取り消す</button></nav>
+<main>
+<aside id="library" aria-label="変更ファイル"><h2>変更ファイル</h2><input id="search" type="search" placeholder="パスで検索" aria-label="ファイル検索"><select id="filter" aria-label="ファイルの絞り込み"><option value="all">すべて</option><option value="unread">未確認</option><option value="questions">疑問あり</option></select><p id="count"></p><div id="files"></div><p class="hint">確認済みは読んだ記録です。承認や安全性の保証ではありません。</p></aside>
+<section id="reader" aria-label="差分"><div class="diff-toolbar"><strong id="filename">比較を開いてください</strong><div><button id="returnDiff" hidden>探索前の差分へ戻る</button><button id="unified">統合</button><button id="split">左右</button><button id="reviewed">確認済みにする</button></div></div><div class="selection-toolbar"><span id="selection">行番号で範囲を選択できます</span><button id="newNote">疑問を残す</button><button id="explain">選択箇所の説明</button></div><div id="diff" tabindex="0"></div></section>
+<aside id="helper" aria-label="補助情報"><nav class="tabs"><button data-tab="explain">説明</button><button data-tab="relations">関係</button><button data-tab="notes">メモ</button></nav><div id="helpBody"></div><details class="limits"><summary>比較全体の解析情報</summary><pre id="warnings"></pre><p>静的に解決できた呼び出しの候補です。実行時の影響を保証しません。</p></details><p class="hint">保存はこのブラウザ・接続先に限られます。サイトデータを消すと記録も消えます。</p></aside>
+</main>
+<dialog id="unsaved"><h2>保存していない下書きがあります</h2><p>比較を切り替える前に選んでください。</p><button id="saveThen">保存して切り替える</button><button id="discardThen">破棄して切り替える</button><button id="cancelThen">戻る</button></dialog>
+<dialog id="clearDialog"><h2>この比較の記録を削除しますか？</h2><p id="clearIdentity"></p><p>確認状態と保存済みメモを削除します。別の比較には影響しません。このページを閉じるか別の比較に切り替えるまで取り消せます。</p><button id="confirmClear">この比較の記録を削除する</button><button id="cancelClear">戻る</button></dialog>
+<script src="/reading-notes.js"></script><script src="/app.js"></script></body></html>
